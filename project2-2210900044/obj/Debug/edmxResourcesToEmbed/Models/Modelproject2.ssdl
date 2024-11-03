@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="prj2_ngohoangminhModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="chi_tiet_don_hang">
+    <Key>
+      <PropertyRef Name="ctdh_id" />
+    </Key>
+    <Property Name="ctdh_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dh_id" Type="int" />
+    <Property Name="sk_id" Type="int" />
+    <Property Name="soluong" Type="int" Nullable="false" />
+    <Property Name="thanh_tien" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="don_hang">
+    <Key>
+      <PropertyRef Name="dh_id" />
+    </Key>
+    <Property Name="dh_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kh_id" Type="int" />
+    <Property Name="ngaylap" Type="date" />
+    <Property Name="tongtien" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="khach_hang">
+    <Key>
+      <PropertyRef Name="kh_id" />
+    </Key>
+    <Property Name="kh_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="100" />
+    <Property Name="sodienthoai" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="skin">
+    <Key>
+      <PropertyRef Name="sk_id" />
+    </Key>
+    <Property Name="sk_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenskin" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="mota" Type="nvarchar" MaxLength="500" />
+    <Property Name="gia" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="thanh_toan">
+    <Key>
+      <PropertyRef Name="tt_id" />
+    </Key>
+    <Property Name="tt_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dh_id" Type="int" />
+    <Property Name="ngaythanhtoan" Type="date" />
+    <Property Name="sotienthanhtoan" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="trangthai" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__chi_tiet___dh_id__403A8C7D">
+    <End Role="don_hang" Type="Self.don_hang" Multiplicity="0..1" />
+    <End Role="chi_tiet_don_hang" Type="Self.chi_tiet_don_hang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="don_hang">
+        <PropertyRef Name="dh_id" />
+      </Principal>
+      <Dependent Role="chi_tiet_don_hang">
+        <PropertyRef Name="dh_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__chi_tiet___sk_id__412EB0B6">
+    <End Role="skin" Type="Self.skin" Multiplicity="0..1" />
+    <End Role="chi_tiet_don_hang" Type="Self.chi_tiet_don_hang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="skin">
+        <PropertyRef Name="sk_id" />
+      </Principal>
+      <Dependent Role="chi_tiet_don_hang">
+        <PropertyRef Name="sk_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__don_hang__kh_id__3D5E1FD2">
+    <End Role="khach_hang" Type="Self.khach_hang" Multiplicity="0..1" />
+    <End Role="don_hang" Type="Self.don_hang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="khach_hang">
+        <PropertyRef Name="kh_id" />
+      </Principal>
+      <Dependent Role="don_hang">
+        <PropertyRef Name="kh_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__thanh_toa__dh_id__49C3F6B7">
+    <End Role="don_hang" Type="Self.don_hang" Multiplicity="0..1" />
+    <End Role="thanh_toan" Type="Self.thanh_toan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="don_hang">
+        <PropertyRef Name="dh_id" />
+      </Principal>
+      <Dependent Role="thanh_toan">
+        <PropertyRef Name="dh_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="prj2_ngohoangminhModelStoreContainer">
+    <EntitySet Name="chi_tiet_don_hang" EntityType="Self.chi_tiet_don_hang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="don_hang" EntityType="Self.don_hang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="khach_hang" EntityType="Self.khach_hang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="skin" EntityType="Self.skin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="thanh_toan" EntityType="Self.thanh_toan" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__chi_tiet___dh_id__403A8C7D" Association="Self.FK__chi_tiet___dh_id__403A8C7D">
+      <End Role="don_hang" EntitySet="don_hang" />
+      <End Role="chi_tiet_don_hang" EntitySet="chi_tiet_don_hang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__chi_tiet___sk_id__412EB0B6" Association="Self.FK__chi_tiet___sk_id__412EB0B6">
+      <End Role="skin" EntitySet="skin" />
+      <End Role="chi_tiet_don_hang" EntitySet="chi_tiet_don_hang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__don_hang__kh_id__3D5E1FD2" Association="Self.FK__don_hang__kh_id__3D5E1FD2">
+      <End Role="khach_hang" EntitySet="khach_hang" />
+      <End Role="don_hang" EntitySet="don_hang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__thanh_toa__dh_id__49C3F6B7" Association="Self.FK__thanh_toa__dh_id__49C3F6B7">
+      <End Role="don_hang" EntitySet="don_hang" />
+      <End Role="thanh_toan" EntitySet="thanh_toan" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Project 2\\BE\\project2-2210900044\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E16EB981-1FCD-4A63-9590-B8061147CDCC}|project2-2210900044\\project2-2210900044.csproj|e:\\project 2\\be\\project2-2210900044\\project2-2210900044\\models\\modelproject2.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{E16EB981-1FCD-4A63-9590-B8061147CDCC}|project2-2210900044\\project2-2210900044.csproj|solutionrelative:project2-2210900044\\models\\modelproject2.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Modelproject2.edmx [Diagram1]",
+              "DocumentMoniker": "E:\\Project 2\\BE\\project2-2210900044\\project2-2210900044\\Models\\Modelproject2.edmx",
+              "RelativeDocumentMoniker": "project2-2210900044\\Models\\Modelproject2.edmx",
+              "ToolTip": "E:\\Project 2\\BE\\project2-2210900044\\project2-2210900044\\Models\\Modelproject2.edmx [Diagram1]",
+              "RelativeToolTip": "project2-2210900044\\Models\\Modelproject2.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-11-03T14:42:09.694Z",
+              "EditorCaption": " [Diagram1]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

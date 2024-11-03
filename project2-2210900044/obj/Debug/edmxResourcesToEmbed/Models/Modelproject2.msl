@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="prj2_ngohoangminhModelStoreContainer" CdmEntityContainer="prj2_ngohoangminhEntities">
+    <EntitySetMapping Name="chi_tiet_don_hang">
+      <EntityTypeMapping TypeName="prj2_ngohoangminhModel.chi_tiet_don_hang">
+        <MappingFragment StoreEntitySet="chi_tiet_don_hang">
+          <ScalarProperty Name="ctdh_id" ColumnName="ctdh_id" />
+          <ScalarProperty Name="dh_id" ColumnName="dh_id" />
+          <ScalarProperty Name="sk_id" ColumnName="sk_id" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="thanh_tien" ColumnName="thanh_tien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="don_hang">
+      <EntityTypeMapping TypeName="prj2_ngohoangminhModel.don_hang">
+        <MappingFragment StoreEntitySet="don_hang">
+          <ScalarProperty Name="dh_id" ColumnName="dh_id" />
+          <ScalarProperty Name="kh_id" ColumnName="kh_id" />
+          <ScalarProperty Name="ngaylap" ColumnName="ngaylap" />
+          <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="khach_hang">
+      <EntityTypeMapping TypeName="prj2_ngohoangminhModel.khach_hang">
+        <MappingFragment StoreEntitySet="khach_hang">
+          <ScalarProperty Name="kh_id" ColumnName="kh_id" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="sodienthoai" ColumnName="sodienthoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="skins">
+      <EntityTypeMapping TypeName="prj2_ngohoangminhModel.skin">
+        <MappingFragment StoreEntitySet="skin">
+          <ScalarProperty Name="sk_id" ColumnName="sk_id" />
+          <ScalarProperty Name="tenskin" ColumnName="tenskin" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="thanh_toan">
+      <EntityTypeMapping TypeName="prj2_ngohoangminhModel.thanh_toan">
+        <MappingFragment StoreEntitySet="thanh_toan">
+          <ScalarProperty Name="tt_id" ColumnName="tt_id" />
+          <ScalarProperty Name="dh_id" ColumnName="dh_id" />
+          <ScalarProperty Name="ngaythanhtoan" ColumnName="ngaythanhtoan" />
+          <ScalarProperty Name="sotienthanhtoan" ColumnName="sotienthanhtoan" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
